@@ -172,8 +172,6 @@ cf restage po-approval
 
 ## Screenshots
 
-<!-- Replace with captures from your browser, saved as docs/screenshots/list-report.png and
-     docs/screenshots/object-page.png:
-     1. Open the live app -> capture the Purchase Orders List Report
-     2. Click PO-0001 -> capture the Object Page with the "Approval Workflow" section
-     (tools/verify-png.js checks a PNG is not blank.) -->
+![Purchase Orders List Report](docs/screenshots/list-report.png)
+
+![Purchase Order Object Page](docs/screenshots/object-page.png)

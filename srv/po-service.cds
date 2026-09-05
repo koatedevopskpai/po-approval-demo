@@ -36,6 +36,7 @@ service PurchaseOrderService @(path: '/odata/v4/purchase-order') {
       Title          : { Value : purchaseOrderNo },
       Description    : { Value : vendor.name }
     },
+    UI.SelectionFields : [ purchaseOrderNo, vendor.name, status, currency ],
     UI.LineItem : [
       { Value : purchaseOrderNo, Label : 'PO Number' },
       { Value : vendor.name,     Label : 'Vendor' },

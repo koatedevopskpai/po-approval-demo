@@ -172,6 +172,8 @@ cf restage po-approval
 
 ## Screenshots
 
+![Demo overview](docs/screenshots/demo-overview.png)
+
 ![Purchase Orders List Report](docs/screenshots/list-report.png)
 
 ![Purchase Order Object Page](docs/screenshots/object-page.png)

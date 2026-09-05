@@ -118,7 +118,7 @@ The `srv/lib/integration.js` module isolates all CPI-specific logic behind one f
 
 Prerequisites: `cf` CLI (`cf --version`), a CF space on your trial, and Node 22+.
 
-### Option A — simple: `cf push` (recommended for the trial)
+### Option A : `cf push` (recommended for the trial)
 
 ```bash
 cf login -a <api> -o <org> -s <space>   # e.g. api.cf.us10.hana.ondemand.com
@@ -154,7 +154,7 @@ cf set-env po-approval CPI_PASSWORD  <iFlow-password>
 cf restage po-approval
 ```
 
-> Demo note: the app runs on SQLite so reviewers need **no** HANA credentials to use the live URL. Data is re-seeded on each (re)deploy and the SQLite file is ephemeral (reset on restage). The app is intentionally **unauthenticated** (CAP `auth: mocked`) so the reviewer link needs no login — in production you would add XSUAA + AppRouter and bind HANA Cloud; the model and service require no changes for that.
+> Demo note: the app runs on SQLite so reviewers need **no** HANA credentials to use the live URL. Data is re-seeded on each (re)deploy and the SQLite file is ephemeral (reset on restage). The app is intentionally **unauthenticated** (CAP `auth: mocked`) so the reviewer link needs no login — in production add XSUAA + AppRouter and bind HANA Cloud; the model and service require no changes for that.
 
 ## Repository layout
 

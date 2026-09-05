@@ -1,6 +1,6 @@
 applications:
   - name: po-approval
-    path: gen/srv
+    path: .
     memory: 256M
     disk-quota: 512M
     instances: 1

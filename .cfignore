@@ -1,0 +1,9 @@
+node_modules/
+gen/
+.git/
+.vscode/
+test/
+.github/
+mta_archives/
+*.sqlite
+db.sqlite

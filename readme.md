@@ -121,14 +121,18 @@ Prerequisites: `cf` CLI (`cf --version`), a CF space on your trial, and Node 22+
 ### Option A — simple: `cf push` (recommended for the trial)
 
 ```bash
-npm run build              # cds build --production -> gen/
 cf login -a <api> -o <org> -s <space>   # e.g. api.cf.us10.hana.ondemand.com
 cf push -f manifest.yml
 cf apps                    # find the app URL
 ```
 
 The app URL (e.g. `https://po-approval-xxxx-trial.cfapps.<region>.hana.ondemand.com`)
-is your clickable reviewer link — it serves the Fiori UI **and** the OData service.
+is your clickable reviewer link. The Fiori UI is at `/purchase-orders/webapp/index.html`,
+the OData service at `/odata/v4/purchase-order`.
+
+> The demo pushes the **project root** (with a `.cfignore`): the CAP build only emits
+> `srv/` into `gen/srv`, so the seed data (`db/data`) and the Fiori app (`app/`) must be
+> included from the source tree. `srv/server.js` deploys the SQLite schema + seed on startup.
 
 ### Option B — MTA
 

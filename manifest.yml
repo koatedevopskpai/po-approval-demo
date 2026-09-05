@@ -1,0 +1,11 @@
+applications:
+  - name: po-approval
+    path: gen/srv
+    memory: 256M
+    disk-quota: 512M
+    instances: 1
+    buildpacks:
+      - nodejs_buildpack
+    command: npm start
+    env:
+      NODE_ENV: production

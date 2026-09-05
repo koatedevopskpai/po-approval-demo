@@ -1,9 +1,12 @@
 {
   "name": "po-approval",
   "version": "1.0.0",
-  "description": "Purchase Order approval automation on SAP BTP – CAP service, Fiori Elements UI, SAP Integration Suite (CPI) integration.",
+  "description": "Purchase Order approval automation on SAP BTP - CAP service, Fiori Elements UI, SAP Integration Suite (CPI) integration.",
   "license": "UNLICENSED",
   "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "dependencies": {
     "@cap-js/sqlite": "^3",
     "@sap/cds": "^10"

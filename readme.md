@@ -116,18 +116,41 @@ The `srv/lib/integration.js` module isolates all CPI-specific logic behind one f
 
 ## Deploy to BTP trial (live URL for reviewers)
 
-Prerequisites: `cf` CLI, `mbt` (e.g. `npm i -g mbt`), and a CF space on your trial.
+Prerequisites: `cf` CLI (`cf --version`), a CF space on your trial, and Node 22+.
+
+### Option A — simple: `cf push` (recommended for the trial)
 
 ```bash
+npm run build              # cds build --production -> gen/
+cf login -a <api> -o <org> -s <space>   # e.g. api.cf.us10.hana.ondemand.com
+cf push -f manifest.yml
+cf apps                    # find the app URL
+```
+
+The app URL (e.g. `https://po-approval-xxxx-trial.cfapps.<region>.hana.ondemand.com`)
+is your clickable reviewer link — it serves the Fiori UI **and** the OData service.
+
+### Option B — MTA
+
+```bash
+npm i -g mbt               # needs Java (tested with OpenJDK 21)
 npm run build
 mbt build -t mta_archives
 cf login -a <api> -o <org> -s <space>
 cf deploy mta_archives/po-approval_1.0.0.mtar
 ```
 
-The deployed app URL is printed by `cf` (find it with `cf apps`). It serves both the Fiori UI and the OData service.
+### Wiring real CPI on CF
 
-> Demo note: the app runs on SQLite so reviewers need **no** HANA credentials to use the live URL. Data is re-seeded on each (re)deploy. For production you would bind HANA Cloud and add XSUAA + AppRouter — the model and service require no changes for that.
+```bash
+cf set-env po-approval CPI_API_URL   https://<tenant>.it-cpitrialXX.cfapps.<region>.hana.ondemand.com
+cf set-env po-approval CPI_API_PATH  /http/poapproval
+cf set-env po-approval CPI_USER      <iFlow-user>
+cf set-env po-approval CPI_PASSWORD  <iFlow-password>
+cf restage po-approval
+```
+
+> Demo note: the app runs on SQLite so reviewers need **no** HANA credentials to use the live URL. Data is re-seeded on each (re)deploy and the SQLite file is ephemeral (reset on restage). For production you would bind HANA Cloud and add XSUAA + AppRouter — the model and service require no changes for that.
 
 ## Repository layout
 

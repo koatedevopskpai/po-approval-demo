@@ -1,0 +1,16 @@
+{
+  "name": "cap-0a_project",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@cap-js/hana": "^3",
+    "@sap/cds": "^10"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^3"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "private": true
+}

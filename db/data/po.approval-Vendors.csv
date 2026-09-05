@@ -1,0 +1,4 @@
+ID,name,vatNumber,email,country
+"a1f0c1b2-0001-4000-8000-000000000001","Acme Corporation","GB123456789","procurement@acme.example","GB"
+"a1f0c1b2-0002-4000-8000-000000000002","Globex Ltd","DE987654321","orders@globex.example","DE"
+"a1f0c1b2-0003-4000-8000-000000000003","Initech GmbH","US111222333","supply@initech.example","US"

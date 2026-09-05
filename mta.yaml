@@ -1,0 +1,24 @@
+_schema-version: '3.2'
+ID: po-approval
+version: 1.0.0
+description: Purchase Order approval automation – CAP service, Fiori Elements UI, SAP Integration Suite (CPI) integration.
+
+modules:
+  - name: po-approval-srv
+    type: nodejs
+    path: gen/srv
+    parameters:
+      buildpack: nodejs_buildpack
+      memory: 256M
+      disk-quota: 512M
+      instances: 1
+      keep-existing-routes: true
+      env:
+        NODE_ENV: production
+    build-parameters:
+      builder: npm-ci
+      ignore: []
+    provides:
+      - name: srv-api
+        properties:
+          srv-url: ${default-url}

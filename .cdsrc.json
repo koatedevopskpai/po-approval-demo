@@ -1,0 +1,7 @@
+{
+  "requires": {
+    "API_CPI": {
+      "kind": "rest"
+    }
+  }
+}

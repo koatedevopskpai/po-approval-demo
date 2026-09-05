@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purchase Order Approval - SAP BTP Demo</title>
+  <style>
+    :root {
+      --sap-blue: #0854a0;
+      --sap-blue-2: #1873c1;
+      --bg: #f8fbff;
+      --text: #1d2d3e;
+      --muted: #556b82;
+      --card: #ffffff;
+      --border: #d1e0f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", Avenir Next, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(8, 84, 160, 0.08);
+      max-width: 640px;
+      width: 100%;
+      padding: 40px 44px;
+    }
+    h1 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+    .sub { color: var(--muted); font-size: 15px; margin-bottom: 24px; line-height: 1.5; }
+    a.btn {
+      display: inline-block;
+      background: var(--sap-blue);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 14px 26px;
+      border-radius: 8px;
+      margin: 8px 0 28px;
+      transition: background 0.15s ease;
+    }
+    a.btn:hover { background: var(--sap-blue-2); }
+    ul { list-style: none; }
+    li { margin: 8px 0; }
+    a.link { color: var(--sap-blue); text-decoration: none; }
+    a.link:hover { text-decoration: underline; }
+    .muted { color: var(--muted); font-size: 13px; margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Purchase Order Approval</h1>
+    <p class="sub">
+      A demo of integration &amp; automation on SAP BTP: creating a purchase order automatically
+      triggers an approval workflow in SAP Integration Suite (CPI) and manages the status
+      end-to-end in a CAP service, all through a Fiori Elements UI.
+    </p>
+    <a class="btn" href="/purchase-orders/webapp/index.html">Open the Fiori app</a>
+    <ul>
+      <li>&#8226;&nbsp; OData service: <a class="link" href="/odata/v4/purchase-order/">/odata/v4/purchase-order</a></li>
+      <li>&#8226;&nbsp; Source code: <a class="link" href="https://github.com/koatedevopskpai/sap-po-approval-demo">github.com/koatedevopskpai/sap-po-approval-demo</a></li>
+    </ul>
+    <p class="muted">Create a PO in the app and watch it auto-submit for approval, then Approve or Reject it.</p>
+  </div>
+</body>
+</html>

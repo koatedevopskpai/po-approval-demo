@@ -150,7 +150,7 @@ cf set-env po-approval CPI_PASSWORD  <iFlow-password>
 cf restage po-approval
 ```
 
-> Demo note: the app runs on SQLite so reviewers need **no** HANA credentials to use the live URL. Data is re-seeded on each (re)deploy and the SQLite file is ephemeral (reset on restage). For production you would bind HANA Cloud and add XSUAA + AppRouter — the model and service require no changes for that.
+> Demo note: the app runs on SQLite so reviewers need **no** HANA credentials to use the live URL. Data is re-seeded on each (re)deploy and the SQLite file is ephemeral (reset on restage). The app is intentionally **unauthenticated** (CAP `auth: mocked`) so the reviewer link needs no login — in production you would add XSUAA + AppRouter and bind HANA Cloud; the model and service require no changes for that.
 
 ## Repository layout
 
